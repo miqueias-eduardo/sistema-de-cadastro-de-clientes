@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Sistema de cadastro</title>
+  </head>
+  <body>
+    <nav id="nav_bar">
+      <h1>Cadastro de Clientes</h1>
+    </nav>
+
+    <main>
+      <button id="cadastrar_client">cadastrar cliente</button>
+      <div id="content-modal">
+        <div id="modal">
+          <button id="fechar">X</button>
+
+          <!--começo dos inputs do cliente-->
+
+          <div class="input-group">
+            <input type="text" id="nome" placeholder="" required />
+            <label for="nome">nome</label>
+          </div>
+
+          <div class="input-group">
+            <input type="email" id="email" placeholder="" required />
+            <label for="email">e-mail</label>
+          </div>
+
+          <div class="input-group">
+            <input type="tel" id="telefone" placeholder="" inputmode="numeric" required  />
+            <label for="telefone">telefone</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="cidade" placeholder="" required />
+            <label for="cidade">cidade</label>
+          </div>
+
+          <input type="submit" id="enviar" />
+
+          <!--fim dos inputs do cliente-->
+        </div>
+      </div>
+
+      <aside id="cabecalho">
+        <div class="coluna"><h3>Nome</h3></div>
+        <div class="coluna"><h3>E-mail</h3></div>
+        <div class="coluna"><h3>Telefone</h3></div>
+        <div class="coluna"><h3>Cidade</h3></div>
+        <div class="coluna"><h3>Ação</h3></div>
+      </aside>
+
+      <aside id="tab-clientes"></aside>
+    </main>
+
+    <script type="module" src="src/index.js"></script>
+  </body>
+</html>

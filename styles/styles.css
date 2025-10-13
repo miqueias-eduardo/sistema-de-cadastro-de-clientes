@@ -1,0 +1,276 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+:root {
+  --laranja: orange;
+  --branco: rgba(240, 235, 235, 0.959);
+  --branco2: aliceblue;
+  --prata: #999595;
+  --verde_claro: greenyellow;
+  --verde: rgb(0, 255, 64);
+  --azul: rgb(120, 120, 241);
+  --vermelho: red;
+  --preto: black;
+  --cinza: rgba(0, 0, 0, 0.767);
+}
+
+#nav_bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90px;
+  background-color: var(--laranja);
+  margin-bottom: 10%;
+}
+
+#nav_bar h1 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+}
+
+/* estilizando o botao de cadastro */
+
+#cadastrar_client {
+  background-color: var(--azul);
+  margin-left: 5%;
+  padding: 2.3vh;
+  padding-bottom: 1.8vh;
+  border: 1px solid var(--preto);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.6s;
+}
+
+#cadastrar_client:hover {
+  transform: scale(1.1);
+}
+
+/*estilizando o o conteiner do modal*/
+#content-modal {
+  display: none;
+}
+
+#content-modal.active {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--cinza);
+  backdrop-filter: blur(6px);
+  z-index: 20;
+}
+
+/*estilizando o botao de fechar o modal*/
+
+#fechar {
+  align-self: last baseline;
+  justify-self: right;
+  width: 2.3em;
+  height: 1.7em;
+  background-color: transparent;
+  border: 0;
+  font-size: 1.6em;
+  cursor: pointer;
+  transition: color 0.6s;
+}
+
+#fechar:hover {
+  color: var(--vermelho);
+}
+
+/*estilizando o modal*/
+
+#modal {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
+  min-width: auto;
+  width: 47%;
+  min-height: auto;
+  height: 22em;
+  border-radius: 25px;
+  left: 28%;
+  top: 30%;
+  background: var(--branco);
+  z-index: 500;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1.5%;
+  font-size: 1em;
+  border-radius: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border: 2px solid;
+  outline: none;
+  transition: border 0.4s, background-color 0.4s;
+}
+
+.input-group input:focus,
+.input-group input:not(:placeholder-shown) {
+  border: 2px solid var(--verde);
+}
+
+.input-group label {
+  position: absolute;
+  top: 20%;
+  left: 4%;
+  font-size: 1.1em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: var(--prata);
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -52%;
+  left: 4%;
+  color: var(--verde);
+}
+
+#enviar {
+  margin-top: 10px;
+  min-width: 30%;
+  padding: 1%;
+  cursor: pointer;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 18px;
+  transition: background-color 0.6s, transform 0.6s, color 0.6s;
+}
+
+#enviar:hover {
+  background-color: var(--verde);
+  color: var(--branco2);
+  transform: scale(1.1);
+}
+
+/* estilizando a tabela de clientes*/
+
+#tab-clientes,
+#cabecalho,
+.linha_client {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  align-items: center;
+  justify-content: center;
+  min-width: auto;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.linha_client {
+  display: flex;
+  flex-direction: row;
+  margin-top: -3px;
+  width: 100%;
+  justify-content: left;
+}
+
+.linha_client:nth-child(1) {
+  margin-top: 30px;
+}
+
+#cabecalho {
+  display: flex;
+  flex-direction: row;
+}
+
+.tab,
+.coluna {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  min-height: auto;
+  height: 30px;
+  min-height: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: end;
+  background-color: var(--branco);
+}
+
+.coluna {
+  height: 40px;
+  margin-bottom: -29px;
+}
+
+.coluna h3 {
+  min-width: 100%;
+  min-height: auto;
+  height: 2em;
+  background-color: var(--laranja);
+  padding-top: 6%;
+  font-size: 1.2em;
+}
+
+.tab p {
+  margin-top: 10px;
+  font-size: clamp(0.6em, 1.2vw, 1.4em);
+}
+
+/*estilizando os botões */
+
+.tab:nth-of-type(5) {
+  display: inline-block;
+}
+
+.tab:nth-of-type(5) button {
+  display: inline-block;
+  min-width: auto;
+  width: 60px;
+  font-size: 1.1em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: var(--branco2);
+  margin-left: 0.2em;
+  cursor: pointer;
+  transition: transform 0.6s;
+  margin-top: 0.2em;
+}
+
+.tab:nth-of-type(5) button:hover {
+  transform: scale(1.2);
+}
+
+.editar {
+  background-color: var(--verde_claro);
+}
+
+.excluir {
+  background-color: var(--vermelho);
+}
+
+@media (max-width: 800px) {
+  .tab:nth-of-type(5) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab:nth-of-type(5) button {
+    font-size: 0.5em;
+  }
+}
