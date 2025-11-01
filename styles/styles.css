@@ -4,9 +4,14 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+body.active {
   height: 100%;
+  overflow: hidden;
+}
+
+main{
+  width:100%;
+  height:100%;
 }
 
 :root {
@@ -42,6 +47,7 @@ body {
 #cadastrar_client {
   background-color: var(--azul);
   margin-left: 5%;
+  margin-bottom:1.5%;
   padding: 2.3vh;
   padding-bottom: 1.8vh;
   border: 1px solid var(--preto);
@@ -69,6 +75,7 @@ body {
   background-color: var(--cinza);
   backdrop-filter: blur(6px);
   z-index: 20;
+  overflow-y: scroll;
 }
 
 /*estilizando o botao de fechar o modal*/
@@ -105,7 +112,7 @@ body {
   border-radius: 25px;
   left: 28%;
   top: 30%;
-  background: var(--branco);
+  background: var(--branco2);
   z-index: 500;
 }
 
@@ -180,7 +187,7 @@ body {
   min-width: auto;
   width: 90%;
   height: auto;
-  margin: 0 auto;
+  justify-self: center ;
 }
 
 .linha_client {
@@ -215,17 +222,18 @@ body {
 }
 
 .coluna {
-  height: 40px;
   margin-bottom: -29px;
+   min-height:1.5em;
+   height: min-content;
 }
 
 .coluna h3 {
   min-width: 100%;
-  min-height: auto;
-  height: 2em;
+ min-height: 1.5em;
+ height: max-content;
   background-color: var(--laranja);
-  padding-top: 6%;
-  font-size: 1.2em;
+  padding-top:10%;
+  font-size: 2.3vw;
 }
 
 .tab p {
@@ -265,6 +273,36 @@ body {
 }
 
 @media (max-width: 800px) {
+
+  #tab-clientes,
+#cabecalho,
+.linha_client {
+  width: 100%;
+}
+
+#cadastrar_client{
+  margin-left:0;
+  margin-bottom:0.5%;
+  padding: 1.7vh;
+  padding-bottom: 1.2vh;
+}
+
+.coluna h3{
+  padding-top:11% ;
+}
+
+
+#modal{
+  width:70%;
+  left:15%;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label{
+  top:-54%;
+}
+
+
   .tab:nth-of-type(5) {
     display: flex;
     flex-direction: column;

@@ -21,8 +21,9 @@ function exibirCriar() {
   document.getElementById("telefone").value = "";
   document.getElementById("cidade").value = "";
 
+   window.scrollTo({ top: 0, behavior: 'smooth' });
   document.getElementById("content-modal").classList.add("active");
-  
+  document.body.classList.add("active");
 }
 
 function exibirEdicao(cliente) {
@@ -33,8 +34,9 @@ function exibirEdicao(cliente) {
   document.getElementById("telefone").value = cliente.telefone;
   document.getElementById("cidade").value = cliente.cidade;
 
+   window.scrollTo({ top: 0, behavior: 'smooth' });
   document.getElementById("content-modal").classList.add("active");
- 
+  document.body.classList.add("active");
 }
 
 // Ao carregar a página, renderiza clientes existentes

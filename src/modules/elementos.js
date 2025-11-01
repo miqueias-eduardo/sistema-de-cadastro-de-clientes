@@ -6,6 +6,7 @@ export function fechar_modal() {
 
   modal_close.addEventListener("click", () => {
     content_modal.classList.remove("active");
+    add_scroll();
     return;
   });
 
@@ -14,6 +15,7 @@ export function fechar_modal() {
   content_modal.addEventListener("click", (event) => {
     if (event.target === content_modal) {
       content_modal.classList.remove("active");
+       add_scroll();
       return;
     }
   });
@@ -24,9 +26,14 @@ export function sairModal (modo){
   const content_modal = document.getElementById("content-modal");
    if (modo === "sair") {
     content_modal.classList.remove("active");
+    add_scroll()
   }
 }
 
+
+export function add_scroll () {
+ document.body.classList.remove("active");
+}
 
 
 export function cadastrar_cliente(cliente) {
