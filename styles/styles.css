@@ -38,8 +38,12 @@ main{
 }
 
 #nav_bar h1 {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 30px;
+  font-family:monospace;
+  font-size: 2.4em;
+  font-weight:lighter;
+  color:var(--branco);
+  text-shadow: 5px 2px 6px var(--preto);
+  letter-spacing: 2px;
 }
 
 /* estilizando o botao de cadastro */
@@ -75,20 +79,17 @@ main{
   min-width: auto;
   width: 90%;
   height: auto;
-  justify-self: center ;
+  justify-self: center;
+  font-family: monospace;
 }
 
 .linha_client {
   display: flex;
   flex-direction: row;
-  margin-top: -3px;
   width: 100%;
   justify-content: left;
 }
 
-.linha_client:nth-child(1) {
-  margin-top: 30px;
-}
 
 #cabecalho {
   display: flex;
@@ -101,7 +102,7 @@ main{
   flex-direction: column;
   width: 20%;
   min-height: auto;
-  height: 30px;
+  height:max-content;
   min-height: auto;
   text-align: center;
   align-items: center;
@@ -110,46 +111,48 @@ main{
 }
 
 .coluna {
-  margin-bottom: -29px;
-   min-height:1.5em;
+  margin-bottom:0;
+   min-height:auto;
    height: min-content;
 }
 
 .coluna h3 {
   min-width: 100%;
- min-height: 1.5em;
  height: max-content;
   background-color: var(--laranja);
-  padding-top:10%;
+  color:var(--branco);
+  padding-top:1% ;
   font-size: 2.3vw;
 }
 
 .tab p {
   margin-top: 10px;
-  font-size: clamp(0.6em, 1.2vw, 1.4em);
+  font-size: 0.9vw;
+  overflow-wrap: break-word; 
 }
 
 /*estilizando os botões */
 
 .tab:nth-of-type(5) {
   display: inline-block;
+  padding-top:0;
 }
 
 .tab:nth-of-type(5) button {
   display: inline-block;
   min-width: auto;
-  width: 60px;
-  font-size: 1.1em;
+  width:6.5vw;
+  font-size: 0.9em;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: var(--branco2);
-  margin-left: 0.2em;
+  margin-left: 0.3em;
+  margin-top:0.2em;
   cursor: pointer;
   transition: transform 0.6s;
-  margin-top: 0.2em;
 }
 
 .tab:nth-of-type(5) button:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .editar {
@@ -168,6 +171,10 @@ main{
   width: 100%;
 }
 
+.tab p{
+  font-size:1.1vw;
+}
+
 #cadastrar_client{
   margin-left:0;
   margin-bottom:0.5%;
@@ -175,16 +182,7 @@ main{
   padding-bottom: 1.2vh;
 }
 
-.coluna h3{
-  padding-top:11% ;
-}
-
-  .tab:nth-of-type(5) {
-    display: flex;
-    flex-direction: column;
-  }
-
   .tab:nth-of-type(5) button {
-    font-size: 0.5em;
+    font-size: 0.4em;
   }
 }
