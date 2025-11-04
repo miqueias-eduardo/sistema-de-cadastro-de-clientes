@@ -42,14 +42,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1%;
+  gap: 5%;
   min-width: auto;
   width: 54%;
   min-height: auto;
-  height: 22em;
+  height: 30em;
   border-radius: 25px;
   left: 23%;
-  top: 30%;
+  top: 10%;
   background: var(--branco2);
   z-index: 500;
 }
@@ -94,6 +94,17 @@
   top: -52%;
   left: 4%;
   color: var(--verde);
+}
+
+.input-group p{
+ position: absolute;
+ bottom: -65%;
+ left:2%;
+ font-family:serif;
+ font-weight:lighter;
+ font-size:1.1em;
+ color:var(--vermelho);
+
 }
 
 #enviar {
