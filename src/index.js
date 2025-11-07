@@ -1,5 +1,6 @@
 import * as dados from "./modules/dados.js";
 import * as elementos from "./modules/elementos.js";
+import * as validar from "./modules/validacao.js"
 
 const enviar = document.getElementById("enviar");
 elementos.fechar_modal();
@@ -77,7 +78,7 @@ document.body.addEventListener("click", (e) => {
 enviar.addEventListener("click", () => {
   const campo = envio();
 
-  const validando = dados.manager.validar(
+  const validando = validar.validar(
     campo.nome,
     campo.email,
     campo.telefone,

@@ -22,33 +22,6 @@ function validarTelefone(telefone) {
   return telefoneValido;
 }
 
-export function validar(nome, email, telefone, cidade) {
-  limparMensagem();
-
-  const campos = camposVazios(nome, email, telefone, cidade);
-  let formatoErros = 0;
-
-  if (campos.length !== 0) {
-    const erros = buscarErros(campos);
-
-    erros.forEach((el) => {
-      el.textContent = "Este campo é obrigatório!";
-    });
-
-    return false;
-  }
-  if (!validarEmail(email)) {
-    const el = buscarErroFormato("email");
-    el.textContent = "Formato de email inválido! Ex.: exemplo@dominio.com";
-    formatoErros += 1;
-  }
-  if (!validarTelefone(telefone)) {
-    const el = buscarErroFormato("telefone");
-    el.textContent = "Formato de telefone inválido! Ex.: (11) 91234-5678";
-    formatoErros += 1;
-  }
-  return formatoErros === 0 ? true : false;
-}
 
 function buscarErros(campos) {
   const inputs = document.querySelectorAll("input");
@@ -81,4 +54,34 @@ function limparMensagem() {
   document
     .querySelectorAll(".mens-error")
     .forEach((el) => (el.textContent = ""));
+}
+
+// função principal
+
+export function validar(nome, email, telefone, cidade) {
+  limparMensagem();
+
+  const campos = camposVazios(nome, email, telefone, cidade);
+  let formatoErros = 0;
+
+  if (campos.length !== 0) {
+    const erros = buscarErros(campos);
+
+    erros.forEach((el) => {
+      el.textContent = "Este campo é obrigatório!";
+    });
+
+    return false;
+  }
+  if (!validarEmail(email)) {
+    const el = buscarErroFormato("email");
+    el.textContent = "Formato de email inválido! Ex.: exemplo@dominio.com";
+    formatoErros += 1;
+  }
+  if (!validarTelefone(telefone)) {
+    const el = buscarErroFormato("telefone");
+    el.textContent = "Formato de telefone inválido! Ex.: (11) 91234-5678";
+    formatoErros += 1;
+  }
+  return formatoErros === 0 ? true : false;
 }

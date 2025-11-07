@@ -51,22 +51,7 @@ export class ADM {
       return true;
     }
    
-  }
-
-  //validando um os dados inseridos do cliente
-
-  validar(nome, email, telefone, cidade) {
-    const inputs = [nome.trim(), email.trim(), telefone.trim(), cidade.trim()];
-    
-    const valid = inputs.every((valor) => valor !== "");
-    if (valid) {
-      return true;
-    } else {
-      alert("Error! preencha todos os campos");
-      return false;
-    }
-  }
-
+  }  
 
 }
 
