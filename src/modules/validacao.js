@@ -50,7 +50,7 @@ function buscarErroFormato(id) {
   return false;
 }
 
-function limparMensagem() {
+export function limparMensagem() {
   document
     .querySelectorAll(".mens-error")
     .forEach((el) => (el.textContent = ""));

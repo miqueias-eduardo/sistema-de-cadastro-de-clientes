@@ -16,6 +16,7 @@ function envio() {
 }
 
 function exibirCriar() {
+  validar.limparMensagem();
   modoEdicao = null;
   document.getElementById("nome").value = "";
   document.getElementById("email").value = "";
@@ -29,6 +30,7 @@ function exibirCriar() {
 
 function exibirEdicao(cliente) {
   modoEdicao = cliente;
+  validar.limparMensagem();
 
   document.getElementById("nome").value = cliente.nome;
   document.getElementById("email").value = cliente.email;
