@@ -13,38 +13,49 @@
     </nav>
 
     <main>
-      <button id="cadastrar_client">cadastrar cliente</button>
+      <div id="barra-ferramentas">
+         <div id="campo-busca">
+          <span id="icon-busca">⌕</span>
+          <input type="text" id="busca" placeholder="Buscar por nome ou cidade..." />
+        </div>
+        <button id="cadastrar_client">Cadastrar Cliente</button>
+      </div>
+
       <div id="content-modal">
         <div id="modal">
           <button id="fechar">X</button>
-
+          
+          <p id="modal-titulo">Novo cliente</p>
           <!--começo dos inputs do cliente-->
 
           <div class="input-group">
-            <input type="text" id="nome" placeholder="" required />
-            <label for="nome">nome</label>
-            <span class="mens-error"></span>
-          </div>
-            
-          <div class="input-group">
-            <input type="email" id="email" placeholder="" required />
-            <label for="email">e-mail</label>
-            <span class="mens-error"></span>
-          </div>
-           
-          <div class="input-group">
-            <input type="tel" id="telefone" placeholder="" inputmode="numeric" required  />
-            <label for="telefone">telefone</label>
+            <input type="text" id="nome" placeholder="João Silva" required />
+            <label for="nome">Nome</label>
             <span class="mens-error"></span>
           </div>
 
           <div class="input-group">
-            <input type="text" id="cidade" placeholder="" required />
-            <label for="cidade">cidade</label>
+            <input type="email" id="email" placeholder="joao@exemplo.com" required />
+            <label for="email">E-mail</label>
             <span class="mens-error"></span>
           </div>
 
-          <input type="submit" id="enviar" />
+          <div class="input-group">
+            <input type="tel" id="telefone" placeholder="(11) 91234-5678" inputmode="numeric" required  />
+            <label for="telefone">Telefone</label>
+            <span class="mens-error"></span>
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="cidade" placeholder="São Paulo" required />
+            <label for="cidade">Cidade</label>
+            <span class="mens-error"></span>
+          </div>
+
+         <div class="modal-footer">
+            <button id="cancelar">Cancelar</button>
+            <input type="submit" id="enviar" value="Salvar" />
+          </div>
 
           <!--fim dos inputs do cliente-->
         </div>
