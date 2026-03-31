@@ -6,9 +6,9 @@
 
 :root {
   --fundo: #0f0f0f;
-  --fundo_content-modal:red;
-  --fundo_modal:blue;
-  
+  --fundo_content-modal:rgba(0, 0, 0, 0.75);
+  --fundo_modal:#141414;;
+
 
   --fundo_cliente: #141414;
   --hover_cliente: #1a1a1a;
@@ -38,11 +38,11 @@
 
   /*tipografia*/
 
-  --fs-texto-legenda: clamp(0.7rem, 0.6rem + 0.2vw, 0.75rem);
+  --fs-texto-legenda: clamp(0.7rem, 0.65rem + 0.2vw, 0.79rem);
   --fs-texto-pequeno: clamp(0.75rem, 0.65rem + 0.3vw, 0.8125rem);
   --fs-texto-padrao: clamp(0.85rem, 0.75rem + 0.4vw, 0.95rem);
   --fs-texto-destaque: clamp(0.95rem, 0.85rem + 0.6vw, 1.1rem);
-  --fs-titulo-principal: clamp(1.1rem, 0.9rem + 1vw, 1.9rem);
+  --fs-titulo-principal: clamp(1.05rem, 0.85rem + 1vw, 1.9rem);
 }
 
 body {
@@ -142,14 +142,14 @@ main {
 
 #cadastrar_client {
   background: var(--fundo_cadastro);
-  color: #0f0f0f;
+  color: rgb(3, 3, 3);
 
   border: none;
   border-radius: 8px;
   padding: 10px 20px;
 
   font-family: var(--font-sans);
-  font-size:var(--texto-pequeno);
+  font-size:var(--fs-texto-legenda);
   font-weight:bolder;
 
   cursor: pointer;
