@@ -3,6 +3,7 @@ import * as elementos from "./modules/elementos.js";
 import * as validar from "./modules/validacao.js"
 
 const enviar = document.getElementById("enviar");
+const cancelar = document.getElementById("cancelar");
 elementos.fechar_modal();
 let modoEdicao = null;
 
@@ -100,7 +101,7 @@ enviar.addEventListener("click", () => {
       dados.manager.salvar_localStorage();
       modoEdicao = null;
 
-      elementos.sairModal("sair");
+      elementos.sairModal();
     }
   } else {
     if (validando === true) {
@@ -113,9 +114,14 @@ enviar.addEventListener("click", () => {
 
       elementos.cadastrar_cliente(cliente);
 
-      elementos.sairModal("sair");
+      elementos.sairModal();
     }
   }
+});
+
+// fechar modal ao cancelar
+cancelar.addEventListener("click", () => {
+  elementos.sairModal();
 });
 
 //excluindo cliente
