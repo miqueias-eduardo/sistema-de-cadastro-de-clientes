@@ -114,9 +114,27 @@ export function updateCliente(cliente) {
     campos.forEach((campo, index) => {
       const chave = camposChave[index];
       if (cliente[chave]) {
-        campo.textContent = cliente[chave];
+        campo.querySelector("p").textContent = cliente[chave];
       }
     });
     return true;
   }
+}
+
+export function filtrarClientes(clientesFiltrados) {
+  const linhas = document.querySelectorAll(".linha_client");
+
+  linhas.forEach((linha) => {
+    linha.classList.add("hidden");
+  });
+
+  clientesFiltrados.forEach((cliente) => {
+    const linha = document.querySelector(
+      `[data-id="${cliente.id}"]`
+    );
+
+    if (linha) {
+      linha.classList.remove("hidden");
+    }
+  });
 }

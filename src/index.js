@@ -139,3 +139,25 @@ document.body.addEventListener("click", (e) => {
   }
 });
 
+// pesquisar clientes
+
+const pesquisar = document.getElementById("busca");
+
+pesquisar.addEventListener("input", () => {
+  const clientes = dados.manager.ler_clientes();
+  const valor = pesquisar.value.toLowerCase().trim();
+
+  if (valor === "") {
+    elementos.filtrarClientes(clientes);
+    return;
+  }
+
+  const filtrados = clientes.filter((cliente)=>{
+    return (
+      cliente.nome.toLowerCase().includes(valor) ||
+      cliente.cidade.toLowerCase().includes(valor)
+    )
+  })
+
+  elementos.filtrarClientes(filtrados);
+})
