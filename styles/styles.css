@@ -314,8 +314,3 @@ main {
   .tab:last-child   { grid-column: 2 / 3; grid-row: 3; justify-content: flex-end; }
 
 }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to   { opacity: 1; transform: none; }
-}
