@@ -3,6 +3,7 @@ import * as elementos from "./modules/elementos.js";
 import * as validar from "./modules/validacao.js"
 
 const enviar = document.getElementById("enviar");
+const cancelar = document.getElementById("cancelar");
 elementos.fechar_modal();
 let modoEdicao = null;
 
@@ -18,6 +19,8 @@ function envio() {
 function exibirCriar() {
   validar.limparMensagem();
   modoEdicao = null;
+  document.getElementById("modal-titulo").textContent = "Novo cliente";
+
   document.getElementById("nome").value = "";
   document.getElementById("email").value = "";
   document.getElementById("telefone").value = "";
@@ -31,6 +34,7 @@ function exibirCriar() {
 function exibirEdicao(cliente) {
   modoEdicao = cliente;
   validar.limparMensagem();
+  document.getElementById("modal-titulo").textContent = "Editar cliente";
 
   document.getElementById("nome").value = cliente.nome;
   document.getElementById("email").value = cliente.email;
@@ -100,7 +104,7 @@ enviar.addEventListener("click", () => {
       dados.manager.salvar_localStorage();
       modoEdicao = null;
 
-      elementos.sairModal("sair");
+      elementos.sairModal();
     }
   } else {
     if (validando === true) {
@@ -113,9 +117,14 @@ enviar.addEventListener("click", () => {
 
       elementos.cadastrar_cliente(cliente);
 
-      elementos.sairModal("sair");
+      elementos.sairModal();
     }
   }
+});
+
+// fechar modal ao cancelar
+cancelar.addEventListener("click", () => {
+  elementos.sairModal();
 });
 
 //excluindo cliente
@@ -133,3 +142,25 @@ document.body.addEventListener("click", (e) => {
   }
 });
 
+// pesquisar clientes
+
+const pesquisar = document.getElementById("busca");
+
+pesquisar.addEventListener("input", () => {
+  const clientes = dados.manager.ler_clientes();
+  const valor = pesquisar.value.toLowerCase().trim();
+
+  if (valor === "") {
+    elementos.filtrarClientes(clientes);
+    return;
+  }
+
+  const filtrados = clientes.filter((cliente)=>{
+    return (
+      cliente.nome.toLowerCase().includes(valor) ||
+      cliente.cidade.toLowerCase().includes(valor)
+    )
+  })
+
+  elementos.filtrarClientes(filtrados);
+})

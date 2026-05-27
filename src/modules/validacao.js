@@ -24,7 +24,7 @@ function validarTelefone(telefone) {
 
 
 function buscarErros(campos) {
-  const inputs = document.querySelectorAll("input");
+  const inputs = document.querySelectorAll("#modal .input-group input");
 
   const erros = campos.map((indice) => {
     const input = inputs[indice];

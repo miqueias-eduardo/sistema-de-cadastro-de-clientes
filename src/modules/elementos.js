@@ -1,8 +1,10 @@
+// cuida das formas de fechar o modal pela interface (botão X e clique fora)
+
 export function fechar_modal() {
   const content_modal = document.getElementById("content-modal");
   const modal_close = document.getElementById("fechar");
 
-  
+
 
   modal_close.addEventListener("click", () => {
     content_modal.classList.remove("active");
@@ -10,7 +12,7 @@ export function fechar_modal() {
     return;
   });
 
- 
+
 
   content_modal.addEventListener("click", (event) => {
     if (event.target === content_modal) {
@@ -19,15 +21,14 @@ export function fechar_modal() {
       return;
     }
   });
- 
+
 }
+// usado quando o sistema precisa fechar o modal por alguma ação (ex: salvar ou cancelar)
 
 export function sairModal (modo){
   const content_modal = document.getElementById("content-modal");
-   if (modo === "sair") {
     content_modal.classList.remove("active");
     add_scroll()
-  }
 }
 
 
@@ -41,7 +42,7 @@ export function cadastrar_cliente(cliente) {
 
   linha.className = "linha_client";
 
-  
+
   const campos = [
     cliente.nome,
     cliente.email,
@@ -60,7 +61,7 @@ export function cadastrar_cliente(cliente) {
 
     return tabela;
   });
-  
+
 
   const tab_Ação = document.createElement("aside");
 
@@ -69,7 +70,7 @@ export function cadastrar_cliente(cliente) {
   tab_Ação.appendChild(criarBotao("editar", "editar"));
   tab_Ação.appendChild(criarBotao("excluir", "excluir"));
 
- 
+
 
   campos.forEach((tabela) => linha.appendChild(tabela));
 
@@ -113,9 +114,27 @@ export function updateCliente(cliente) {
     campos.forEach((campo, index) => {
       const chave = camposChave[index];
       if (cliente[chave]) {
-        campo.textContent = cliente[chave];
+        campo.querySelector("p").textContent = cliente[chave];
       }
     });
     return true;
   }
+}
+
+export function filtrarClientes(clientesFiltrados) {
+  const linhas = document.querySelectorAll(".linha_client");
+
+  linhas.forEach((linha) => {
+    linha.classList.add("hidden");
+  });
+
+  clientesFiltrados.forEach((cliente) => {
+    const linha = document.querySelector(
+      `[data-id="${cliente.id}"]`
+    );
+
+    if (linha) {
+      linha.classList.remove("hidden");
+    }
+  });
 }
